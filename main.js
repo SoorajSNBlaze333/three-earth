@@ -1,3 +1,4 @@
+import { Color, Fog } from 'three';
 import { World, Box, light } from './components';
 
 const world = new World();

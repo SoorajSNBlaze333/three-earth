@@ -15,6 +15,9 @@ class World {
     this.renderer = createRenderer();
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     const resizer = new Resizer(this.camera, this.renderer);
+    resizer.onResize = () => {
+      this.render();
+    }
   }
   render() {
     this.controls.update();
