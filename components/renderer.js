@@ -1,11 +1,7 @@
 import { WebGLRenderer } from 'three';
 
 function createRenderer() {
-  const renderer = new WebGLRenderer({
-    antialias: true
-  });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(devicePixelRatio); // use this to remove jagged edges
+  const renderer = new WebGLRenderer({ antialias: true });
   document.body.appendChild(renderer.domElement);
   return renderer;
 }
