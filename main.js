@@ -1,17 +1,20 @@
-import { DirectionalLight } from 'three';
-import { World, Box } from './components';
+import { World, Box, light } from './components';
 
 const world = new World();
 const { scene, camera, controls } = world;
-const light = new DirectionalLight(0xFFFFFF, 1);
-light.position.set(0, 0, 1);
-scene.add(light);
+
+// add lights
+const sceneLight = light("point", { color: "white", intensity: 10, distance: 100 })
+sceneLight.position.set(0, 10, 10);
+scene.add(sceneLight);
+
 camera.position.set(0, 0, 15)
 controls.update();
 
-const boxObj = new Box(10, 10, 10);
+const boxObj = new Box(5, 5, 5);
 const box = boxObj.createBox();
 scene.add(box);
+box.rotation.set(2, 0, 2);
 
 function animate() {
   requestAnimationFrame(animate);

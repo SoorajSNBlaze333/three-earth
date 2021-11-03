@@ -1,8 +1,8 @@
 import {
   BoxBufferGeometry,
   Mesh,
-  MeshBasicMaterial
 } from 'three';
+import material from './material';
 
 class Box {
   #length;
@@ -18,8 +18,9 @@ class Box {
     return geometry;
   }
   #createBoxMaterial() {
-    const material = new MeshBasicMaterial();
-    return material;
+    const options = { color: 'red' };
+    const boxMaterial = material("standard", options);
+    return boxMaterial;
   }
   createBox() {
     return new Mesh(
