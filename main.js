@@ -17,9 +17,4 @@ const box = boxObj.createBox();
 scene.add(box);
 box.rotation.set(2, 0, 2);
 
-function animate() {
-  requestAnimationFrame(animate);
-  world.render();
-}
-
-animate();
+world.render();
