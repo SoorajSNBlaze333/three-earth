@@ -4,6 +4,7 @@ import {
   MathUtils,
 } from 'three';
 import material from './material';
+// testing commit
 
 function createCube(length, width, depth) {
   const geometry = new BoxBufferGeometry(length, width, depth);
